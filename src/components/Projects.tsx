@@ -16,25 +16,27 @@ const Projects = () => {
       title: "MovieMint-Project",
       description: "Modern streaming platform template with elegant UI/UX design, featuring light/dark theme support and fully responsive layout built with cutting-edge technologies.",
       technologies: ["React", "TypeScript", "TailwindCSS", "Vite"],
-      link: "#"
+      link: "https://github.com/NallamalaAkshay/MovieMint-Project"
     },
     {
       title: "Amazon Clone",
       description: "Full-featured e-commerce application with Firebase authentication, real-time cart system, and polished user interface mimicking Amazon's design patterns.",
       technologies: ["React", "Firebase", "CSS"],
-      link: "#"
+      link: "https://github.com/NallamalaAkshay/amazon-clone-akshay"
     },
     {
       title: "Agro-Care Project",
-      description: "Machine learning application providing intelligent crop management insights and recommendations to optimize agricultural practices.",
-      technologies: ["Python", "Machine Learning", "Data Analysis"],
-      link: "#"
+      description:
+      "A full-stack machine learning application that provides intelligent crop management insights and recommendations to optimize agricultural practices. The frontend is built with React.js and Tailwind CSS for a modern, responsive UI, while the backend uses Django APIs for real-time ML predictions and data analysis.",
+      technologies: ["React.js", "Tailwind CSS", "Django", "Machine Learning", "Data Analysis"],
+      link: "https://github.com/NallamalaAkshay/Agro-Care-Project-"
+
     },
     {
       title: "Animal Detection System",
       description: "Real-time detection system using YOLO V5 for identifying wild animal intrusions, complete with automated alert mechanisms for safety.",
       technologies: ["YOLO V5", "Python", "Computer Vision"],
-      link: "#"
+      link: "https://github.com/NallamalaAkshay/Animal-Detection-and-Alert-System-using-YOLO-V5"
     }
   ];
 
