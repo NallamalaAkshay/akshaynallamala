@@ -58,8 +58,8 @@ Currently pursuing my **Master’s in Information Science (AI & Data Analytics)*
 
 Clone & Run Locally:
 ```bash
-git clone https://github.com/NallamalaAkshay/akshaynallamala-portfolio.git
-cd akshaynallamala-portfolio
+git clone https://github.com/NallamalaAkshay/akshaynallamala.git
+cd akshaynallamala
 npm install
 npm run dev
 ```
@@ -104,11 +104,11 @@ npm run preview
 
 ## 🖼️ Sneak Peek
 
-| 🏠 Home | 💼 Projects | ✉️ Contact |
-|:--:|:--:|:--:|
-| ![Home Section](https://via.placeholder.com/250x140?text=Home+Section) | ![Projects Section](https://via.placeholder.com/250x140?text=Projects) | ![Contact Form](https://via.placeholder.com/250x140?text=Contact+Form) |
+| 🏠 Home | ✉️ Contact |
+|:--:|:--:|
+| ![Home Page](./Screenshots/pic1.png) | ![Contact Page](./Screenshots/pic2.png) |
 
-*(Replace placeholders with real screenshots later)*
+> *(Real screenshots from my live portfolio — check it out at [akshaynallamala.online](https://akshaynallamala.online))*
 
 ---
 
