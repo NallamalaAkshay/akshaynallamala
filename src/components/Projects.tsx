@@ -3,14 +3,77 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Briefcase } from "lucide-react";
 
 const Projects = () => {
-  const experience = {
-    title: "Web Development Intern",
-    company: "CodeBind Technologies, Chennai",
-    period: "Oct 2021 – Nov 2021",
-    description:
-      "Built a comprehensive e-commerce website using HTML, CSS, PHP, and MySQL, implementing user authentication, product management, and shopping cart functionality.",
-    technologies: ["HTML", "CSS", "PHP", "MySQL"],
-  };
+  const experiences = [
+    {
+      title: "Software Engineer",
+      company: "XchangeTechs Star Alliance LLP",
+      location: "Bangalore, India",
+      period: "April 2023 – June 2024",
+      description: [
+        "Designed and implemented dynamic front-end interfaces using React.js, Next.js, TypeScript, and TailwindCSS.",
+        "Built RESTful APIs and microservices using Node.js, Express.js, and FastAPI integrated with PostgreSQL and MongoDB.",
+        "Implemented authentication and authorization workflows using JWT and OAuth 2.0.",
+        "Deployed applications on AWS (EC2, S3, Lambda) and Dockerized environments with CI/CD pipelines through GitHub Actions and Jenkins.",
+        "Optimized backend performance using Prisma ORM and Redis caching, improving response times by 40%.",
+        "Participated in Agile sprints, handled version control via Git/GitHub, and maintained production-level code quality.",
+      ],
+      technologies: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Prisma",
+        "Redis",
+        "TailwindCSS",
+        "AWS",
+        "Docker",
+        "Git",
+        "CI/CD",
+        "GraphQL",
+        "Jest",
+      ],
+      achievements: [
+        "Delivered multiple full-stack web solutions with 95%+ client satisfaction.",
+        "Increased system efficiency through backend refactoring and optimized queries.",
+        "Mentored junior trainees and improved team workflows.",
+      ],
+    },
+    {
+      title: "Software Trainee",
+      company: "XchangeTechs Star Alliance LLP",
+      location: "Bangalore, India",
+      period: "May 2022 – March 2023",
+      description: [
+        "Completed an intensive full-stack web development training covering modern JavaScript frameworks and backend fundamentals.",
+        "Developed internal mini-projects using React.js, Node.js, Express.js, and MySQL for practical learning.",
+        "Built responsive interfaces and improved UI/UX using HTML5, CSS3, JavaScript, and Figma prototypes.",
+        "Learned REST API integration, JSON data handling, and basic Docker and AWS deployments.",
+        "Collaborated in Agile project cycles and gained experience in Git, GitHub, and peer code reviews.",
+      ],
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "Git",
+        "GitHub",
+        "Figma",
+        "Docker (Basics)",
+        "AWS (Basics)",
+        "Jest",
+      ],
+      achievements: [
+        "Promoted to Software Engineer within 11 months after completing full-stack training.",
+        "Built and presented 3 internal applications demonstrating complete CRUD and API workflows.",
+      ],
+    },
+  ];
 
   const projects = [
     {
@@ -65,27 +128,57 @@ const Projects = () => {
               <Briefcase className="w-6 h-6 text-primary" />
               Work Experience
             </h3>
-            <Card className="p-8 bg-card border-border hover-lift">
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <h4 className="text-xl font-semibold">{experience.title}</h4>
-                    <p className="text-primary font-medium">{experience.company}</p>
+            <div className="space-y-6">
+              {experiences.map((exp, index) => (
+                <Card
+                  key={index}
+                  className="p-8 bg-card border-border hover-lift animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div>
+                        <h4 className="text-xl font-semibold">{exp.title}</h4>
+                        <p className="text-primary font-medium">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground">{exp.location}</p>
+                      </div>
+                      <Badge variant="secondary" className="text-sm">
+                        {exp.period}
+                      </Badge>
+                    </div>
+                    <ul className="space-y-2">
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="text-muted-foreground text-sm flex gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div>
+                      <p className="text-sm font-semibold mb-2">Technologies:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech) => (
+                          <Badge key={tech} variant="outline" className="border-primary/50">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold mb-2">Key Achievements:</p>
+                      <ul className="space-y-1">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i} className="text-muted-foreground text-sm flex gap-2">
+                            <span className="text-primary">✓</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <Badge variant="secondary" className="text-sm">
-                    {experience.period}
-                  </Badge>
-                </div>
-                <p className="text-muted-foreground">{experience.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {experience.technologies.map((tech) => (
-                    <Badge key={tech} variant="outline" className="border-primary/50">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </Card>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* Projects Grid */}
