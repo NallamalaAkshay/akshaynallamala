@@ -3,77 +3,72 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Briefcase } from "lucide-react";
 
 const Projects = () => {
-  const experiences = [
-    {
-      title: "Software Engineer",
-      company: "XchangeTechs Star Alliance LLP",
-      location: "Bangalore, India",
-      period: "April 2023 – June 2024",
-      description: [
-        "Designed and implemented dynamic front-end interfaces using React.js, Next.js, TypeScript, and TailwindCSS.",
-        "Built RESTful APIs and microservices using Node.js, Express.js, and FastAPI integrated with PostgreSQL and MongoDB.",
-        "Implemented authentication and authorization workflows using JWT and OAuth 2.0.",
-        "Deployed applications on AWS (EC2, S3, Lambda) and Dockerized environments with CI/CD pipelines through GitHub Actions and Jenkins.",
-        "Optimized backend performance using Prisma ORM and Redis caching, improving response times by 40%.",
-        "Participated in Agile sprints, handled version control via Git/GitHub, and maintained production-level code quality.",
-      ],
-      technologies: [
-        "React.js",
-        "Next.js",
-        "Node.js",
-        "Express.js",
-        "FastAPI",
-        "PostgreSQL",
-        "MongoDB",
-        "Prisma",
-        "Redis",
-        "TailwindCSS",
-        "AWS",
-        "Docker",
-        "Git",
-        "CI/CD",
-        "GraphQL",
-        "Jest",
-      ],
-      achievements: [
-        "Delivered multiple full-stack web solutions with 95%+ client satisfaction.",
-        "Increased system efficiency through backend refactoring and optimized queries.",
-        "Mentored junior trainees and improved team workflows.",
-      ],
-    },
-    {
-      title: "Software Trainee",
-      company: "XchangeTechs Star Alliance LLP",
-      location: "Bangalore, India",
-      period: "May 2022 – March 2023",
-      description: [
-        "Completed an intensive full-stack web development training covering modern JavaScript frameworks and backend fundamentals.",
-        "Developed internal mini-projects using React.js, Node.js, Express.js, and MySQL for practical learning.",
-        "Built responsive interfaces and improved UI/UX using HTML5, CSS3, JavaScript, and Figma prototypes.",
-        "Learned REST API integration, JSON data handling, and basic Docker and AWS deployments.",
-        "Collaborated in Agile project cycles and gained experience in Git, GitHub, and peer code reviews.",
-      ],
-      technologies: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MySQL",
-        "Git",
-        "GitHub",
-        "Figma",
-        "Docker (Basics)",
-        "AWS (Basics)",
-        "Jest",
-      ],
-      achievements: [
-        "Promoted to Software Engineer within 11 months after completing full-stack training.",
-        "Built and presented 3 internal applications demonstrating complete CRUD and API workflows.",
-      ],
-    },
-  ];
+  const experience = {
+    company: "XchangeTechs Star Alliance LLP",
+    location: "Bangalore, India",
+    totalPeriod: "May 2022 – June 2024",
+    roles: [
+      {
+        title: "Software Engineer",
+        period: "Apr 2023 – Jun 2024",
+        description: [
+          "Designed and implemented responsive front-end interfaces using React.js, Next.js, TypeScript, and TailwindCSS.",
+          "Built RESTful APIs and microservices using Node.js, Express.js, and FastAPI integrated with PostgreSQL and MongoDB.",
+          "Deployed production-ready applications on AWS (EC2, S3, Lambda) and Docker environments with CI/CD pipelines using GitHub Actions and Jenkins.",
+          "Implemented authentication and authorization with JWT and OAuth 2.0.",
+          "Optimized backend performance using Prisma ORM, Redis caching, and query optimization.",
+          "Collaborated in Agile sprints, performed code reviews, and wrote test cases using Jest and Mocha.",
+        ],
+        achievements: [
+          "Delivered multiple full-stack projects with 95%+ client satisfaction.",
+          "Improved system performance by ~38% through backend service refactoring, query optimization, and caching implementation.",
+          "Guided a small group of 3–4 trainees on front-end best practices, Git workflows, and API integration techniques.",
+        ],
+      },
+      {
+        title: "Software Trainee",
+        period: "May 2022 – Mar 2023",
+        description: [
+          "Completed a comprehensive full-stack web development training program covering both front-end and back-end technologies.",
+          "Developed internal demo projects using React.js, Node.js, Express.js, and MySQL demonstrating end-to-end CRUD operations.",
+          "Designed responsive layouts using HTML5, CSS3, JavaScript, and TailwindCSS.",
+          "Learned and practiced REST API development, asynchronous programming, and version control using Git/GitHub.",
+          "Collaborated with UI/UX designers in Figma and assisted with backend feature integration.",
+        ],
+        achievements: [
+          "Recognized for exceptional performance during training and transitioned into a full-time Software Engineer role contributing to key client projects.",
+          "Built and presented 3 internal demo applications showcasing complete CRUD and API workflows.",
+        ],
+      },
+    ],
+    technologies: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma",
+      "Redis",
+      "TailwindCSS",
+      "AWS",
+      "Docker",
+      "Git/GitHub",
+      "CI/CD",
+      "GraphQL",
+      "Jest",
+      "Mocha",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "MySQL",
+      "Figma",
+      "OAuth 2.0",
+      "JWT",
+    ],
+  };
 
   const projects = [
     {
@@ -122,7 +117,7 @@ const Projects = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto"></div>
           </div>
 
-          {/* Professional Experience - Timeline */}
+          {/* Professional Experience - Single Company Card */}
           <div className="space-y-8">
             <div className="text-center">
               <h3 className="text-3xl font-bold flex items-center justify-center gap-2">
@@ -131,74 +126,72 @@ const Projects = () => {
               </h3>
             </div>
             
-            <div className="relative max-w-5xl mx-auto">
-              {/* Timeline vertical line */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
-              
-              <div className="space-y-12">
-                {experiences.map((exp, index) => (
-                  <div
-                    key={index}
-                    className="relative animate-fade-in"
-                    style={{ animationDelay: `${index * 0.2}s` }}
-                  >
-                    {/* Timeline node */}
-                    <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background z-10">
-                      <Briefcase className="w-7 h-7 text-primary-foreground" />
+            <div className="max-w-4xl mx-auto animate-fade-in">
+              <Card className="p-6 md:p-8 bg-card border-border hover-lift transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                <div className="space-y-6">
+                  {/* Company Header */}
+                  <div className="space-y-2 pb-4 border-b border-border">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <h4 className="text-2xl md:text-3xl font-bold text-foreground">{experience.company}</h4>
+                      <Badge variant="secondary" className="text-xs md:text-sm whitespace-nowrap">
+                        {experience.totalPeriod}
+                      </Badge>
                     </div>
-                    
-                    {/* Content card - alternating sides on desktop */}
-                    <div className={`ml-24 md:ml-0 md:w-[calc(50%-4rem)] ${index % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'}`}>
-                      <Card className="p-6 md:p-8 bg-card border-border hover-lift transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-                        <div className="space-y-4">
-                          <div className="space-y-2">
-                            <div className="flex flex-wrap items-start justify-between gap-3">
-                              <h4 className="text-xl md:text-2xl font-bold text-foreground">{exp.title}</h4>
-                              <Badge variant="secondary" className="text-xs md:text-sm whitespace-nowrap">
-                                {exp.period}
-                              </Badge>
-                            </div>
-                            <p className="text-primary font-semibold text-lg">{exp.company}</p>
-                            <p className="text-sm text-muted-foreground">📍 {exp.location}</p>
-                          </div>
-                          
-                          <ul className="space-y-2 border-l-2 border-primary/30 pl-4">
-                            {exp.description.map((item, i) => (
-                              <li key={i} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
-                                <span className="text-primary mt-1 font-bold">•</span>
-                                <span>{item}</span>
+                    <p className="text-sm text-muted-foreground">📍 {experience.location}</p>
+                  </div>
+                  
+                  {/* Roles */}
+                  <div className="space-y-8">
+                    {experience.roles.map((role, index) => (
+                      <div key={index} className="space-y-4">
+                        <div className="flex flex-wrap items-baseline justify-between gap-2">
+                          <h5 className="text-xl font-bold text-primary">{role.title}</h5>
+                          <span className="text-sm text-muted-foreground font-medium">{role.period}</span>
+                        </div>
+                        
+                        <ul className="space-y-2 border-l-2 border-primary/30 pl-4">
+                          {role.description.map((item, i) => (
+                            <li key={i} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                              <span className="text-primary mt-1 font-bold">•</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <div>
+                          <p className="text-sm font-semibold mb-2 text-foreground">🏆 Key Achievements:</p>
+                          <ul className="space-y-2">
+                            {role.achievements.map((achievement, i) => (
+                              <li key={i} className="text-muted-foreground text-sm flex gap-2 leading-relaxed">
+                                <span className="text-primary font-bold">✓</span>
+                                <span>{achievement}</span>
                               </li>
                             ))}
                           </ul>
-                          
-                          <div className="pt-2">
-                            <p className="text-sm font-semibold mb-3 text-foreground">🛠️ Technologies:</p>
-                            <div className="flex flex-wrap gap-2">
-                              {exp.technologies.map((tech) => (
-                                <Badge key={tech} variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
-                                  {tech}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                          
-                          <div className="pt-2">
-                            <p className="text-sm font-semibold mb-3 text-foreground">🏆 Key Achievements:</p>
-                            <ul className="space-y-2">
-                              {exp.achievements.map((achievement, i) => (
-                                <li key={i} className="text-muted-foreground text-sm flex gap-2 leading-relaxed">
-                                  <span className="text-primary font-bold">✓</span>
-                                  <span>{achievement}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
                         </div>
-                      </Card>
+                        
+                        {index < experience.roles.length - 1 && (
+                          <div className="pt-4">
+                            <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Technologies */}
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm font-semibold mb-3 text-foreground">🛠️ Technologies & Tools:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {experience.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              </Card>
             </div>
           </div>
 
