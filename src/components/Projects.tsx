@@ -122,62 +122,83 @@ const Projects = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto"></div>
           </div>
 
-          {/* Work Experience */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold flex items-center gap-2">
-              <Briefcase className="w-6 h-6 text-primary" />
-              Work Experience
-            </h3>
-            <div className="space-y-6">
-              {experiences.map((exp, index) => (
-                <Card
-                  key={index}
-                  className="p-8 bg-card border-border hover-lift animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap items-start justify-between gap-4">
-                      <div>
-                        <h4 className="text-xl font-semibold">{exp.title}</h4>
-                        <p className="text-primary font-medium">{exp.company}</p>
-                        <p className="text-sm text-muted-foreground">{exp.location}</p>
-                      </div>
-                      <Badge variant="secondary" className="text-sm">
-                        {exp.period}
-                      </Badge>
+          {/* Professional Experience - Timeline */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h3 className="text-3xl font-bold flex items-center justify-center gap-2">
+                <Briefcase className="w-7 h-7 text-primary" />
+                Professional Experience
+              </h3>
+            </div>
+            
+            <div className="relative max-w-5xl mx-auto">
+              {/* Timeline vertical line */}
+              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent"></div>
+              
+              <div className="space-y-12">
+                {experiences.map((exp, index) => (
+                  <div
+                    key={index}
+                    className="relative animate-fade-in"
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    {/* Timeline node */}
+                    <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background z-10">
+                      <Briefcase className="w-7 h-7 text-primary-foreground" />
                     </div>
-                    <ul className="space-y-2">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="text-muted-foreground text-sm flex gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div>
-                      <p className="text-sm font-semibold mb-2">Technologies:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="border-primary/50">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold mb-2">Key Achievements:</p>
-                      <ul className="space-y-1">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="text-muted-foreground text-sm flex gap-2">
-                            <span className="text-primary">✓</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    
+                    {/* Content card - alternating sides on desktop */}
+                    <div className={`ml-24 md:ml-0 md:w-[calc(50%-4rem)] ${index % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'}`}>
+                      <Card className="p-6 md:p-8 bg-card border-border hover-lift transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                        <div className="space-y-4">
+                          <div className="space-y-2">
+                            <div className="flex flex-wrap items-start justify-between gap-3">
+                              <h4 className="text-xl md:text-2xl font-bold text-foreground">{exp.title}</h4>
+                              <Badge variant="secondary" className="text-xs md:text-sm whitespace-nowrap">
+                                {exp.period}
+                              </Badge>
+                            </div>
+                            <p className="text-primary font-semibold text-lg">{exp.company}</p>
+                            <p className="text-sm text-muted-foreground">📍 {exp.location}</p>
+                          </div>
+                          
+                          <ul className="space-y-2 border-l-2 border-primary/30 pl-4">
+                            {exp.description.map((item, i) => (
+                              <li key={i} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                                <span className="text-primary mt-1 font-bold">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          
+                          <div className="pt-2">
+                            <p className="text-sm font-semibold mb-3 text-foreground">🛠️ Technologies:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {exp.technologies.map((tech) => (
+                                <Badge key={tech} variant="outline" className="border-primary/50 hover:bg-primary/10 transition-colors">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          
+                          <div className="pt-2">
+                            <p className="text-sm font-semibold mb-3 text-foreground">🏆 Key Achievements:</p>
+                            <ul className="space-y-2">
+                              {exp.achievements.map((achievement, i) => (
+                                <li key={i} className="text-muted-foreground text-sm flex gap-2 leading-relaxed">
+                                  <span className="text-primary font-bold">✓</span>
+                                  <span>{achievement}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </Card>
                     </div>
                   </div>
-                </Card>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
