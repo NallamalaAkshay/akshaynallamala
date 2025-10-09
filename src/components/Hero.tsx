@@ -113,10 +113,10 @@ const Hero = () => {
                 {/* Title - Bright Blue + Light Gray */}
                 <div className="space-y-2">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                    <span className="text-neon-cyan">Full-Stack Developer</span>
+                    <span className="text-neon-cyan">Software Engineer</span>
                   </h2>
                   <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
-                    AI & Data Analytics Enthusiast
+                    Full-Stack, AI & Data Analytics Enthusiast
                   </p>
                 </div>
               </div>
