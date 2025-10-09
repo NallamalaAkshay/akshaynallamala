@@ -6,23 +6,32 @@ const Skills = () => {
     {
       title: "Frontend Development",
       icon: Code2,
-      skills: ["React", "TypeScript", "JavaScript", "TailwindCSS", "Firebase"]
+      skills: ["React.js", "Next.js", "TypeScript", "JavaScript", "TailwindCSS", "HTML5 & CSS3", "Firebase"]
     },
     {
       title: "Backend & Databases",
       icon: Database,
-      skills: ["Node.js", "Express", "PHP", "MySQL", "PostgreSQL"]
+      skills: ["Node.js", "Express.js", "FastAPI", "PostgreSQL", "MongoDB", "MySQL", "Prisma ORM"]
     },
     {
-      title: "Programming & Core",
+      title: "Programming & Core Concepts",
       icon: Layers,
-      skills: ["Java", "Python", "C", "Data Structures", "Algorithms"]
+      skills: ["Java", "Python", "C", "Object-Oriented Programming (OOPs)", "Data Structures & Algorithms", "API Development", "Version Control (Git/GitHub)"]
     },
     {
       title: "AI & Analytics",
       icon: Brain,
-      skills: ["YOLO V5", "Machine Learning", "Data Analysis", "AI Integration"]
+      skills: ["YOLOv5", "Machine Learning", "AI Integration", "Data Analysis", "TensorFlow", "Scikit-learn"]
     }
+  ];
+
+  const devOpsTools = [
+    "Docker",
+    "AWS (EC2, S3, Lambda)",
+    "Jenkins / GitHub Actions (CI/CD)",
+    "Postman",
+    "VS Code",
+    "Figma"
   ];
 
   const professionalSkills = [
@@ -30,7 +39,9 @@ const Skills = () => {
     "UX Principles",
     "Team Collaboration",
     "Problem Solving",
-    "Communication"
+    "Communication",
+    "Leadership",
+    "Adaptability"
   ];
 
   return (
@@ -42,7 +53,7 @@ const Skills = () => {
             <div className="w-20 h-1 bg-gradient-primary mx-auto"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => {
               const Icon = category.icon;
               return (
@@ -67,6 +78,20 @@ const Skills = () => {
                 </Card>
               );
             })}
+          </div>
+
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-center mb-8">DevOps & Tools</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {devOpsTools.map((tool, index) => (
+                <div
+                  key={index}
+                  className="px-6 py-3 bg-card border border-primary/30 rounded-lg hover:bg-primary/10 transition-colors"
+                >
+                  <span className="text-sm font-medium">{tool}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-12">

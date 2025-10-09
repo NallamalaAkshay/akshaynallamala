@@ -123,7 +123,7 @@ const Hero = () => {
 
               {/* Tagline */}
               <p className="text-lg md:text-xl text-foreground/90 leading-relaxed max-w-xl">
-                Passionate about creating <span className="text-neon-cyan font-semibold">seamless</span>, <span className="text-neon-blue font-semibold">intelligent</span>, and <span className="text-neon-pink font-semibold">user-focused</span> applications.
+                Building <span className="text-neon-cyan font-semibold">scalable</span>, <span className="text-neon-blue font-semibold">intelligent</span>, and <span className="text-neon-pink font-semibold">user-focused</span> digital solutions.
               </p>
 
               {/* CTA Buttons */}

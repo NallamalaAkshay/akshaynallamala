@@ -13,15 +13,14 @@ const About = () => {
 
           <div className="space-y-6 text-lg text-muted-foreground animate-fade-in">
             <p>
-              I'm a passionate full-stack developer driven by curiosity and creativity. I thrive on solving 
-              end-to-end problems, from crafting intuitive user interfaces to building robust backend systems. 
-              My approach combines technical excellence with a deep understanding of user needs.
+              I'm a passionate Software Engineer with a strong focus on Full-Stack Development, AI, and Data Analytics. 
+              Driven by curiosity and creativity, I enjoy solving end-to-end challenges — from designing intuitive user 
+              interfaces to architecting scalable backend systems.
             </p>
             <p>
-              With expertise spanning modern web technologies and AI integration, I specialize in creating 
-              seamless, intelligent applications that make a real impact. Whether it's building responsive 
-              frontends with React or implementing machine learning models, I'm committed to turning complex 
-              challenges into elegant solutions.
+              My work blends technical precision with a deep understanding of user experience, enabling me to build 
+              applications that are both intelligent and impactful. With hands-on experience in modern web technologies 
+              and AI integration, I strive to turn complex ideas into seamless, real-world digital solutions.
             </p>
           </div>
 
